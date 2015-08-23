@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 90110c2123e8f9f4f96155dfe5b71531
-timeCreated: 1440235880
+timeCreated: 1440318034
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Monster Stages_0
+    21300002: Monster Stages_1
+    21300004: Monster Stages_2
+    21300006: Monster Stages_3
+    21300008: Monster Stages_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,9 +58,49 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Monster Stages_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Monster Stages_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Monster Stages_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Monster Stages_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

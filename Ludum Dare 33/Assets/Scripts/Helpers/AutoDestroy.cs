@@ -7,11 +7,11 @@ public class AutoDestroy : MonoBehaviour
     [SerializeField]
     private float _secondsToLive = 1.0f;
 
-    private Coroutine _routine;
+//    private Coroutine _routine;
 
     void Start()
     {
-        _routine = StartCoroutine(destroyRoutine());
+        /*_routine = */StartCoroutine(destroyRoutine());
     }
 
     IEnumerator destroyRoutine()

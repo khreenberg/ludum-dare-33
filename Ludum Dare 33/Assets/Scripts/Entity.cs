@@ -9,6 +9,24 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private AudioClip _deathSound;
 
+    [SerializeField]
+    private GameObject _levelUpEffect;
+    [SerializeField]
+    private AudioClip _levelUpSound;
+
+    [SerializeField]
+    private bool _destroyParentOnDeath = true;
+
+    [SerializeField]
+    private bool _isEnemy = true;
+
+    private int _nextLevelXp {
+        get
+        {
+            return Mathf.RoundToInt((Stats.Level * Stats.Level) + (2f * Stats.Level))+1;
+        }
+    }
+
     /// <summary>
     /// Damages the health of the entity.
     /// </summary>
@@ -28,8 +46,31 @@ public class Entity : MonoBehaviour
     {
         Instantiate(_deathEffect, transform.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(_deathSound, transform.position);
-        Destroy(this.gameObject);
+        Destroy(_destroyParentOnDeath ? gameObject.transform.parent.gameObject : gameObject);
     }
 
+    void Update()
+    {
+        if (_isEnemy) return;
+        checkLevel();
+    }
+
+    private void checkLevel()
+    {
+        if (Stats.Experience < _nextLevelXp) return;
+        LevelUp();
+    }
+
+    public void LevelUp()
+    {
+        GameObject effect = Instantiate(_levelUpEffect);
+        effect.transform.parent = transform;
+        effect.transform.localPosition = Vector2.zero;
+        AudioSource.PlayClipAtPoint(_levelUpSound, transform.position);
+        Stats.Level++;
+        Stats.MaxHealth = Stats.Level * 100;
+        Stats.Health = Stats.MaxHealth;
+        Stats.Attack = Stats.Level*2;
+    }
 }
 #pragma warning restore 0649

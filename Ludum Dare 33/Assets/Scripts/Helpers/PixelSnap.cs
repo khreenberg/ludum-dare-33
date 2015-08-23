@@ -5,7 +5,7 @@ using UnityEngine;
 public class PixelSnap : MonoBehaviour
 {
 
-    private const int PPU = 100;
+    public const int PPU = 100;
     [SerializeField]
     private bool _oddX, _oddY;
 
